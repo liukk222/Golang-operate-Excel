@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>golang操作Excel</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <h2 class="page-header">多课网-老郭golang技术分享-golang操作Excel</h2>
+        <hr>
+        <div class="row mt-5">
+            <div class="col-md-4">
+                <form action="/places" method="post">
+                    <div class="form-group">
+                        <label for="name">名称</label>
+                        <input type="text" class="form-control" id="name" name="name" placeholder="输入名称">
+                    </div>
+                    <div class="form-group">
+                        <label for="lon">经度</label>
+                        <input type="text" class="form-control" id="lon" name="lon" placeholder="输入经度">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="lat">纬度</label>
+                        <input type="text" class="form-control" id="lat" name="lat" placeholder="输入纬度">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="desc">描述</label>
+                        <textarea class="form-control" id="desc" rows="3" name="desc" placeholder="输入描述"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">提交</button>
+
+                    <a href="/to_import">导入</a>|<a href="/export">导出</a>
+
+                </form>
+            </div>
+
+            <div class="col-md-8">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th style="width: 10%">名称</th>
+                            <th>经度</th>
+                            <th>纬度</th>
+                            <th>描述</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {{range .places}}
+                        <tr>
+                            <td>{{.Name}}</td>
+                            <td>{{.Longitude}}</td>
+                            <td>{{.Latitude}}</td>
+                            <td>{{.Description}}</td>
+                        </tr>
+                        {{end}}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JavaScript -->
+
+
+
+</body>
+
+</html>
